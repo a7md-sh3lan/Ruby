@@ -70,3 +70,6 @@ gem 'jquery-rails'
 
 # Devise for authintication
 gem 'devise'
+
+# Bootstrap form
+gem 'bootstrap_form'
