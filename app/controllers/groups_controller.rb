@@ -38,10 +38,10 @@ class GroupsController < ApplicationController
       end
 			
     else
-      if Group.exists? name: group_params[:name]
+      if current_user.groups.exists? name: group_params[:name]
 				#this group is already exist
         respond_to do |format|
-          format.html { redirect_to groups_path, notice: 'Group was Created .' }
+          format.html { redirect_to groups_path, notice: 'Group was Found .' }
         end
       else
         @group = Group.new(group_params.merge(user: current_user))

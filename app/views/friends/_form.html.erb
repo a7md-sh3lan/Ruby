@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :"Friend Email" %>
-    <%= form.text_field :email %>
+  <div class="field form-group text-center">
+    <%= form.label :"Friend Email" , class: "text-center h2" %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group text-center">
+    <%= form.submit "Add Friend", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -2,6 +2,7 @@
 <p id="notice" class="alert alert-primary" role="alert"><%= notice %></p>
 
 <h1 class='h1 '>Groups</h1>
+<hr style='color:red;height:3px;background:red'>
 
 <%= render 'form', group: @group %>
 </div>
@@ -13,9 +14,9 @@
   <div class='row'>
     <div class='col-sm-4'>
       <div class="panel panel-default">
-        <div class="panel-heading"></div>
+        <div class="panel-heading">My Groups</div>
         <div class="panel-body">
-          <% current_user.groups.each do |group| %>
+          <% current_user.groups.all.each do |group| %>
           <div class='row'>
             <div class=col-md-6>
               <%= group.name %>
