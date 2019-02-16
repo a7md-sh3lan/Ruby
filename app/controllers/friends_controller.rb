@@ -62,7 +62,7 @@ class FriendsController < ApplicationController
             end
       else
         respond_to do |format|
-          fformat.html { render :index }
+          format.html { render :index }
           format.json { render json: @friend, status: :unprocessable_entity }	
       end	
 		end
