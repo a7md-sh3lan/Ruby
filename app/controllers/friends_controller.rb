@@ -62,8 +62,8 @@ class FriendsController < ApplicationController
             end
       else
         respond_to do |format|
-          format.html { render :index }
-          format.json { render json: @friend, status: :unprocessable_entity }	
+          format.html { redirect_to friends_path, notice: 'Friend was  not successfully add. enter coorect email or cuurent user' }
+          format.json { head :no_content }
       end	
 		end
   end
