@@ -24,9 +24,20 @@
                        placeholder: 'password confirmation', 
                        class: 'form-control' %>
   <%= f.submit 'Sign up', class: 'btn sign-up-button' %>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+
+  
+
+
 <% end %>
 
 		
     </div>
   </div>
 </div>
+<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<% unless current_user %>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<% else %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
