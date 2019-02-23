@@ -12,7 +12,16 @@ end
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
   end
-
+    resources :orders
+    resources :gruops do
+      resources :members
+          end
+    
+    resources :ordermembers
+    root to: 'orders#index'
+  
+    get '/invitedfriend/:id', to: 'orders#invitedfriends', as: 'invitedfriends'
+    get '/joinedfriend/:id', to: 'orders#joinedfriends', as: 'joinedfriends'
   devise_scope :user do
     get 'signup', to: 'devise/registrations#new'
   end
