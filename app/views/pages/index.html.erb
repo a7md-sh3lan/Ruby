@@ -4,7 +4,11 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Latest Orders</div>
                 <div class="panel-body">
-                    Panel content
+                   <% @orders.each do|order| %>
+                    
+                    <%= link_to  "#{order.name}", order_path(order.id) %>
+                    <br>
+                   <%end%>
                 </div>
             </div>
 
@@ -13,7 +17,16 @@
             <div class="panel panel-success">
                 <div class="panel-heading">Friends Activity</div>
                 <div class="panel-body">
-                    Panel content
+                
+                    <% @firendsNotify.each do|friend| %>
+                     <% if !friend.friend.orders.blank? %>
+                        <%= friend.friend.name%> make 
+                        
+                            <%= link_to  "#{friend.friend.orders.first.name}", order_path(friend.friend.orders.first.id) %> order
+                        <br>
+                    
+                   <%end%>
+                <%end%>
                 </div>
             </div>
 

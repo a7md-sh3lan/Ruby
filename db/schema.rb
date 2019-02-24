@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_234447) do
+ActiveRecord::Schema.define(version: 2019_02_22_180753) do
 
   create_table "friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,44 @@ ActiveRecord::Schema.define(version: 2019_02_15_234447) do
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
+  create_table "invited_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_invited_members_on_order_id"
+    t.index ["user_id"], name: "index_invited_members_on_user_id"
+  end
+
+  create_table "order_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "user_id"
+    t.string "item_name"
+    t.float "item_price"
+    t.integer "amount"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_informations_on_order_id"
+    t.index ["user_id"], name: "index_order_informations_on_user_id"
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "ends_at"
+    t.string "resturant"
+    t.string "menu_file_name"
+    t.string "menu_content_type"
+    t.integer "menu_file_size"
+    t.datetime "menu_updated_at"
+    t.integer "meal"
+    t.integer "status"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +90,9 @@ ActiveRecord::Schema.define(version: 2019_02_15_234447) do
   add_foreign_key "group_members", "groups"
   add_foreign_key "group_members", "users"
   add_foreign_key "groups", "users"
+  add_foreign_key "invited_members", "orders"
+  add_foreign_key "invited_members", "users"
+  add_foreign_key "order_informations", "orders"
+  add_foreign_key "order_informations", "users"
+  add_foreign_key "orders", "users"
 end

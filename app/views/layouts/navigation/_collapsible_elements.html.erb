@@ -27,7 +27,7 @@
 
           
             <li class="dropdown text-center" >
-                <a id="dLabel" style='padding-bottom: 0px !important;' role="button" data-toggle="dropdown" data-target="#" href="/page.html"><span class="label label-primary" style="font-size: .9em" id="new_notification_number">3</span>
+                <a id="dLabel" style='padding-bottom: 0px !important;' role="button" data-toggle="dropdown" data-target="#" href="/page.html"><span class="label label-primary" style="font-size: .9em" id="new_notification_number"><%= @notify.count %></span>
                     <i class="glyphicon glyphicon-bell" style="font-size: 1.5em">
                     </i>
                 </a>
@@ -39,23 +39,23 @@
                     </div>
                     <li class="divider"></li>
                     <div class="notifications-wrapper " style='min-width: 278px'>
-                        <a class="content" href="#">
+                    <% @notify.each do |n| %>
+                        <a class="content" href="/orders/<%=n.order.id%>">
                             <div class="notification-item">
-                                <h4 class="item-title">ivinite<h4>
                                 
-                                new order <small>Time</small>
+                                <h4 class="item-title"><%= n.order.user.name%><h4>
+                                invited you to new order <small><%= distance_of_time_in_words(Time.now, n.order.created_at)%><small>
                                 </h4>
-                                <p class="item-info">home</p>
+                                <p class="item-info">join</p>
                             </div>
 
                         </a>
+                         <li class="divider"></li>
+                        <%end%>
 
                     </div>
-                    <li class="divider"></li>
-                    <div class="notification-footer"  style='color:#fff'>
-                        <h4 class="menu-title">Notifications<!--<i class="glyphicon glyphicon-circle-arrow-right"></i>-->
-                        </h4>
-                    </div>
+                   
+                   
                 </ul>
 
             </li>

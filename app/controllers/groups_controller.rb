@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
+    @notify = current_user.invited_members;
     @groups = Group.all
     @group = Group.new
 
@@ -12,6 +13,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @notify = current_user.invited_members;
     @groups = Group.all
     @group = Group.new
     @group_s = Group.find(params[:id])
@@ -22,6 +24,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+    @notify = current_user.invited_members;
     @group = Group.new
   end
 
@@ -32,6 +35,7 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
+    @notify = current_user.invited_members;
     if group_params[:name] == ""
       respond_to do |format|
         format.html { redirect_to groups_path, notice: 'Group was Empty Cant created.' }
@@ -85,7 +89,8 @@ class GroupsController < ApplicationController
   #add friend to group
   def addFriend
     #Now i have this friend data from the data base and i already have the groupId
-		#get the friend name
+    #get the friend name
+    @notify = current_user.invited_members;
 		@friendName = params[:name]	
     #check if it is null
   if @friendName.empty?
@@ -163,6 +168,7 @@ class GroupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_group
       @group = Group.find(params[:id])
+      @notify = current_user.invited_members;
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
