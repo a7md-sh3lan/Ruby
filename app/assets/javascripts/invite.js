@@ -1,7 +1,14 @@
 $(document).ready(function(){
     let usersIDs = [];
     $("#invite-box").on("keypress", function(e){
+	        
+	 $(document).on("keyup keypress keydown","#order", function(e){
         
+       	 if(e.keyCode == "13"){
+            e.preventDefault();
+            return 0;
+       	   }
+   	 })
         if(e.keyCode == "13"){
             console.log("hhhhh");
             e.preventDefault();
