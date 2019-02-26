@@ -1,18 +1,20 @@
 $(document).ready(function(){
     let usersIDs = [];
-    $("#invite-box").on("keypress", function(e){
-	        
-	 $(document).on("keyup keypress keydown","#order", function(e){
-        
-       	 if(e.keyCode == "13"){
-            e.preventDefault();
-            return 0;
-       	   }
-   	 })
-        if(e.keyCode == "13"){
+    // $("#order").on("keyup  keydown keypress", function(e){
+    //     console.log("asmas");
+    //     if(e.keyCode == "13"){
+    //         e.preventDefault();
+    //         return 0;
+    //       }
+    // })
+    $("#invit").on("click", function(e){
+       //alert("click")
+        console.log("sa");
+	
+        {
             console.log("hhhhh");
-            e.preventDefault();
-            target = {"name": $(this).val()};
+           
+            target = {"name": $("#test").val()};
             data = JSON.stringify(target);
             $.ajax({
                 url: "/orders/invite.json",
