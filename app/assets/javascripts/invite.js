@@ -52,13 +52,14 @@ $(document).ready(function(){
                         userBox.append(userBoxRow);
 
                         usersBox.append(userBox);
-                        $(this).val("");
+                        $("#test").val("");
                     }
                     $("#order_invited_ids").val(usersIDs.toString());
                 }
             });
 
         }
+        $("#test").val("");
     });
 
     $("#invited-people-list").on('click', 'button', function(){

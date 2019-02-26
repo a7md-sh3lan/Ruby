@@ -31,11 +31,7 @@ class FriendsController < ApplicationController
   # POST /friends.json
   def create
 
-<<<<<<< HEAD
     @notify = current_user.invited_members;
-=======
-    
->>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
 		@parameter = params[:friend][:email]
 		
 		if  @parameter.empty?
