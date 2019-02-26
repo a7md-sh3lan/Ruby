@@ -1,11 +1,21 @@
 $(document).ready(function(){
     let usersIDs = [];
-    $("#invite-box").on("keypress", function(e){
-        
-        if(e.keyCode == "13"){
+
+    // $("#order").on("keyup  keydown keypress", function(e){
+    //     console.log("asmas");
+    //     if(e.keyCode == "13"){
+    //         e.preventDefault();
+    //         return 0;
+    //       }
+    // })
+    $("#invit").on("click", function(e){
+       //alert("click")
+        console.log("sa");
+	
+        {
             console.log("hhhhh");
-            e.preventDefault();
-            target = {"name": $(this).val()};
+           
+            target = {"name": $("#test").val()};
             data = JSON.stringify(target);
             $.ajax({
                 url: "/orders/invite.json",
@@ -42,13 +52,14 @@ $(document).ready(function(){
                         userBox.append(userBoxRow);
 
                         usersBox.append(userBox);
-                        $(this).val("");
+                        $("#test").val("");
                     }
                     $("#order_invited_ids").val(usersIDs.toString());
                 }
             });
 
         }
+        $("#test").val("");
     });
 
     $("#invited-people-list").on('click', 'button', function(){
@@ -69,4 +80,5 @@ $(document).ready(function(){
         //console.log($(this).serialize()+usersIDs);
 
     }) */
+
 });

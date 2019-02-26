@@ -6,15 +6,20 @@ class FriendsController < ApplicationController
   def index
     @friends = current_user.user_friends
     @friend = Friend.new
+
+    @notify = current_user.invited_members;
+
   end
 
   # GET /friends/1
   # GET /friends/1.json
   def show
+    @notify = current_user.invited_members;
   end
 
   # GET /friends/new
   def new
+    @notify = current_user.invited_members;
     @friend = Friend.new
   end
 
@@ -26,7 +31,7 @@ class FriendsController < ApplicationController
   # POST /friends.json
   def create
 
-    
+    @notify = current_user.invited_members;
 		@parameter = params[:friend][:email]
 		
 		if  @parameter.empty?

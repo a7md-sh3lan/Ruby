@@ -22,7 +22,13 @@
 <% end %>
   </tbody>
 </table>
+<<<<<<< HEAD
+<% if !@order.menu.blank? %>
 <%= link_to "menu", @order.menu.url %><br>
+<%end%>
+=======
+<%= link_to "menu", @order.menu.url %><br>
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
 <%= link_to "#{@order.invited_members.count} friends invited, click to view", order_invited_path(@order) %>
 <br>
 
