@@ -4,10 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-<<<<<<< HEAD
     @notify = current_user.invited_members;
-=======
->>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @groups = Group.all
     @group = Group.new
 
@@ -16,10 +13,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-<<<<<<< HEAD
     @notify = current_user.invited_members;
-=======
->>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @groups = Group.all
     @group = Group.new
     @group_s = Group.find(params[:id])
@@ -30,10 +24,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
-<<<<<<< HEAD
     @notify = current_user.invited_members;
-=======
->>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @group = Group.new
   end
 
