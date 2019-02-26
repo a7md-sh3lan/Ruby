@@ -1,5 +1,6 @@
 $(document).ready(function(){
     let usersIDs = [];
+
     // $("#order").on("keyup  keydown keypress", function(e){
     //     console.log("asmas");
     //     if(e.keyCode == "13"){
@@ -78,4 +79,8 @@ $(document).ready(function(){
         //console.log($(this).serialize()+usersIDs);
 
     }) */
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab

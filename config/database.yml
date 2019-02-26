@@ -19,7 +19,11 @@ default: &default
 
 development:
   <<: *default
+<<<<<<< HEAD
   database: yallaNotlub2
+=======
+  database: yallaNotlub3
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

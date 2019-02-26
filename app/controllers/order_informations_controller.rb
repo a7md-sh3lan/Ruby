@@ -3,12 +3,18 @@ class OrderInformationsController < ApplicationController
     before_action :get_order, only: [:index, :create]
 
     def index
+<<<<<<< HEAD
         @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
         @joined_members = @order.order_informations.joins(:user).select(:name, :email, :user_id).distinct
     end
 
     def create
+<<<<<<< HEAD
         @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
         @user = current_user
         if @user.id == get_order_params()[:user_id].to_i
             unless @order

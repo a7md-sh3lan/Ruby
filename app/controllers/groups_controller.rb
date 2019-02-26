@@ -4,7 +4,10 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @groups = Group.all
     @group = Group.new
 
@@ -13,7 +16,10 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @groups = Group.all
     @group = Group.new
     @group_s = Group.find(params[:id])
@@ -24,7 +30,10 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @group = Group.new
   end
 
@@ -35,7 +44,10 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     if group_params[:name] == ""
       respond_to do |format|
         format.html { redirect_to groups_path, notice: 'Group was Empty Cant created.' }
@@ -89,8 +101,12 @@ class GroupsController < ApplicationController
   #add friend to group
   def addFriend
     #Now i have this friend data from the data base and i already have the groupId
+<<<<<<< HEAD
     #get the friend name
     @notify = current_user.invited_members;
+=======
+		#get the friend name
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
 		@friendName = params[:name]	
     #check if it is null
   if @friendName.empty?

@@ -33,18 +33,29 @@
 
     <div>
       <%= f.label :invite %><br />
+<<<<<<< HEAD
       <%= f.text_field :invitations , id: "test", class: "form-control" %>
     </div>
     <div style='margin-top:3px;margin-bottom:10px;'>
        <button  type='button' id ='invit' class='btn btn-success'>Add Freind</button>
+=======
+      <%= f.text_field :invitations , id: "invite-box", class: "form-control" %>
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     </div>
     <div class="form-group">
       <%= f.datetime_field :ends_at %>
     </div>
+<<<<<<< HEAD
     <div class="">
       <%= f.file_field :menu %>
     </div>
     <div class="">
+=======
+    <div class="form-group">
+      <%= f.file_field :menu %>
+    </div>
+    <div class="form-group">
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
       <%= f.submit "add", class: "btn btn-primary" %>
     </div>
 <% end %>

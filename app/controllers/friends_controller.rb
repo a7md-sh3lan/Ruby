@@ -6,18 +6,27 @@ class FriendsController < ApplicationController
   def index
     @friends = current_user.user_friends
     @friend = Friend.new
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
   end
 
   # GET /friends/1
   # GET /friends/1.json
   def show
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
   end
 
   # GET /friends/new
   def new
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
     @friend = Friend.new
   end
 
@@ -29,7 +38,11 @@ class FriendsController < ApplicationController
   # POST /friends.json
   def create
 
+<<<<<<< HEAD
     @notify = current_user.invited_members;
+=======
+    
+>>>>>>> b8db9d60f00fcbc2024e9334583c4063a782ccab
 		@parameter = params[:friend][:email]
 		
 		if  @parameter.empty?
